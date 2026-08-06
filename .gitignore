@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Local tooling — never published
+.claude/settings.local.json
+resume.txt
