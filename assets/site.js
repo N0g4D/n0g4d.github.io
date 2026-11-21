@@ -459,6 +459,62 @@
 
   refreshBrief();
 
+  /* ── Screenshots: the full image in a viewer ──────────────────────────── */
+
+  // Without this script, a thumbnail is a plain link to the full image.
+  const viewer = $('#viewer');
+  const viewerImg = $('#viewer-img');
+  const viewerTitle = $('#viewer-title');
+  const viewerCaption = $('#viewer-caption');
+  const viewerPrev = $('#viewer-prev');
+  const viewerNext = $('#viewer-next');
+  let shotSet = [];
+  let shotLabel = '';
+  let shotIndex = 0;
+
+  function showShot(index) {
+    shotIndex = (index + shotSet.length) % shotSet.length;
+    const link = shotSet[shotIndex];
+    const caption = $('figcaption', link.closest('figure'));
+    viewerImg.width = Number(link.dataset.w) || 0;
+    viewerImg.height = Number(link.dataset.h) || 0;
+    viewerImg.src = link.href;
+    viewerImg.alt = $('img', link).alt;
+    viewerCaption.textContent = caption ? caption.textContent : '';
+    viewerTitle.textContent = shotSet.length > 1
+      ? `${shotLabel}, ${shotIndex + 1} of ${shotSet.length}`
+      : shotLabel;
+  }
+
+  $$('.shot').forEach((link) => {
+    link.setAttribute('aria-haspopup', 'dialog');
+    link.addEventListener('click', (event) => {
+      // Let Ctrl/Cmd-click and middle-click open the image in a new tab.
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      const set = link.closest('.shots');
+      shotSet = $$('.shot', set);
+      shotLabel = set.getAttribute('aria-label') || 'Screenshot';
+      viewerPrev.hidden = shotSet.length < 2;
+      viewerNext.hidden = shotSet.length < 2;
+      showShot(shotSet.indexOf(link));
+      viewer.showModal();
+    });
+  });
+
+  viewerPrev.addEventListener('click', () => showShot(shotIndex - 1));
+  viewerNext.addEventListener('click', () => showShot(shotIndex + 1));
+  $('#viewer-close').addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', (event) => {
+    if (event.target === viewer) viewer.close();
+  });
+  viewer.addEventListener('keydown', (event) => {
+    if (shotSet.length < 2) return;
+    if (event.key === 'ArrowLeft') { event.preventDefault(); showShot(shotIndex - 1); }
+    if (event.key === 'ArrowRight') { event.preventDefault(); showShot(shotIndex + 1); }
+  });
+  viewer.addEventListener('close', () => viewerImg.removeAttribute('src'));
+
   /* ── Print as a CV ────────────────────────────────────────────────────── */
 
   let openedForPrint = [];
@@ -515,7 +571,7 @@
   command('Do', 'Print as a CV', () => window.print(), '', 'pdf resume curriculum download');
 
   command('Elsewhere', 'GitHub', () => { location.href = 'https://github.com/N0g4D'; }, 'github.com/N0g4D');
-  command('Elsewhere', 'LinkedIn', () => { location.href = 'https://www.linkedin.com/in/alessio-malerba-969088204/'; }, 'linkedin.com');
+  command('Elsewhere', 'LinkedIn', () => { location.href = 'https://www.linkedin.com/in/alessiomalerba-tech/'; }, 'linkedin.com');
 
   let matches = [];
   let active = 0;

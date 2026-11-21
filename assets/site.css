@@ -1,10 +1,12 @@
 /* ==========================================================================
    alessiomalerba.it
 
-   Two colours and nothing in between. There are no greys in this file:
+   Two colours and nothing in between. The interface has no greys:
    emphasis is size, weight or inversion; a quiet line is a dotted line;
    "dimmed" is a one-bit checkerboard. Swapping --ink and --paper is the
-   whole light theme.
+   whole light theme. Screenshots are the one exception, and only until
+   someone asks for them: grey on the page, in colour on hover and in the
+   viewer.
    ========================================================================== */
 
 @font-face {
@@ -87,13 +89,13 @@ strong { font-weight: 700; }
 a { color: inherit; }
 
 /* Links in running text: underlined, and they invert like everything else. */
-.prose a:not(.btn),
+.prose a:not(.btn):not(.shot),
 .site-footer a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }
-.prose a:not(.btn):hover,
+.prose a:not(.btn):not(.shot):hover,
 .site-footer a:hover {
   background: var(--ink);
   color: var(--paper);
@@ -397,6 +399,7 @@ kbd {
 .ledger dd {
   max-width: 68%;
   text-align: right;
+  overflow-wrap: anywhere;
 }
 
 /* ── Sections ───────────────────────────────────────────────────────────── */
@@ -594,6 +597,74 @@ kbd {
 .verdict[data-state="match"] { background: var(--ink); color: var(--paper); }
 .verdict[data-state="differ"] { border-style: dashed; }
 
+/* ── Screenshots ────────────────────────────────────────────────────────── */
+
+/* Two to a row; with an odd number, the first one takes the full width. */
+.shots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+}
+.shots > li:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
+.shots figure { display: grid; gap: 6px; align-content: start; }
+.shots figcaption { font-size: var(--small); }
+
+.shot {
+  display: block;
+  border: 1px solid var(--ink);
+}
+.shot:hover { box-shadow: 0 0 0 1px var(--ink); }
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(1);
+  transition: filter 160ms ease-out;
+}
+.shot:hover img,
+.shot:focus-visible img { filter: none; }
+
+.viewer {
+  width: min(1200px, calc(100vw - 24px));
+  max-width: none;
+  max-height: calc(100dvh - 24px);
+  margin: auto;
+  padding: 0;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.viewer-inner { padding: 14px 16px 18px; }
+.viewer-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 16px;
+}
+.viewer-title { font-weight: 700; }
+.viewer-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.viewer-figure {
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  margin-top: 14px;
+}
+.viewer-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100dvh - 190px);
+  width: auto;
+  height: auto;
+  border: 1px solid var(--ink);
+}
+.viewer-figure figcaption { max-width: 62ch; font-size: var(--small); }
+
 /* ── Forms ──────────────────────────────────────────────────────────────── */
 
 label,
@@ -663,10 +734,12 @@ input.mono { font-family: var(--mono); font-size: 0.9375rem; }
 .palette[open] { display: flex; flex-direction: column; }
 
 /* One-bit dimming: every other pixel pair goes to paper. */
-.palette::backdrop {
+.palette::backdrop,
+.viewer::backdrop {
   background: conic-gradient(#000 25%, transparent 0 50%, #000 0 75%, transparent 0) 0 0 / 4px 4px;
 }
-:root[data-theme="light"] .palette::backdrop {
+:root[data-theme="light"] .palette::backdrop,
+:root[data-theme="light"] .viewer::backdrop {
   background: conic-gradient(#fff 25%, transparent 0 50%, #fff 0 75%, transparent 0) 0 0 / 4px 4px;
 }
 
@@ -785,6 +858,7 @@ input.mono { font-family: var(--mono); font-size: 0.9375rem; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .shot img { transition: none; }
 }
 
 @media (forced-colors: active) {
@@ -828,6 +902,7 @@ input.mono { font-family: var(--mono); font-size: 0.9375rem; }
   .skip,
   .no-print,
   .palette,
+  .viewer,
   .anchor,
   .marker,
   #contact,

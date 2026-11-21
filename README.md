@@ -22,6 +22,7 @@ interactions on top.
 | `assets/site.css` | All the styles, including the print stylesheet that turns the page into a CV |
 | `assets/site.js` | All the interactions (see below). No dependencies |
 | `assets/fonts/` | Atkinson Hyperlegible Next and Mono (variable, Latin subset), with their OFL licences |
+| `assets/shots/` | Project screenshots, in WebP: the full image and a 960-px-wide thumbnail for each |
 | `n0g4d.png` | Favicon and touch icon |
 | `og.png` | 1200×630 preview image for links shared on LinkedIn, Slack, etc. |
 | `CNAME` | Binds the apex domain `alessiomalerba.it`. **Do not delete**: removing it unbinds the custom domain on the next build |
@@ -52,6 +53,8 @@ two variables swapped.
 - **Layout:** each section is a title column and a content column. Content is
   rows of "term, then what it means", separated by dotted rules, rather than
   grids of cards.
+- **Screenshots** are the one exception to the two colours, and only on
+  request: grey on the page, in their own colours on hover and in the viewer.
 - **Motion:** one moment only. The hero digest resolves from left to right on
   load. It is skipped under `prefers-reduced-motion`.
 
@@ -69,6 +72,10 @@ All of them run on the visitor's device; nothing is sent anywhere.
   have. It uses Web Crypto, with a small pure-JS fallback for pages opened over
   plain HTTP.
 - **Project filter** by area (AI agents, Web3, Power Platform).
+- **Screenshots** inside a project open full size in a viewer (arrow keys
+  move between them, Esc closes). Without JavaScript a thumbnail is a plain
+  link to the full image, and Ctrl/⌘-click opens it in a new tab either way.
+  Images load only when their project is opened.
 - **Write a brief:** a few choices and a few lines turn into a draft in the
   visitor's own mail app (a `mailto:` link). The "Start a … brief" buttons
   preselect the kind of work.
@@ -99,6 +106,16 @@ python3 -m http.server 8000
   separated: `agents`, `web3`, `power-platform`) and update the
   `github.com/N0g4D/…` line inside it, which is what the printed CV shows. The
   filter counts and the palette pick it up on their own.
+- **A screenshot:** save two WebP files in `assets/shots/`, the full image
+  (up to 1600 px wide) as `<project>-<what>.webp` and a 960-px-wide copy as
+  `<project>-<what>-960.webp`. Then add an `<li>` to the project's
+  `<ul class="shots">` (copy the one in `#crysm`; a project without
+  screenshots needs the whole `<ul>`, after its description): `data-w` and
+  `data-h` are the full image's size, `width` and `height` the thumbnail's.
+  Write the `alt` text for someone who can't see the image and keep the
+  caption to one line. Thumbnails are cropped to 16:10 from the top; the
+  viewer shows the whole image. With an odd number of screenshots, the first
+  one spans the full width. Leave out client work, emails and tenant names.
 - **A new section:** add a `<section class="section" id="…">`, a link in
   `<nav id="nav">` (the palette and the current-section highlight read the nav)
   and `data-anchor` on its title.
