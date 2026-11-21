@@ -1,580 +1,623 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Alessio Malerba — Power Platform Solution Architect &amp; Pro-Dev Security Specialist</title>
-    <meta name="description" content="Alessio Malerba — Senior Power Platform Solution Architect &amp; Pro-Dev Security Specialist. Microsoft Certified PL-600 and PL-400. Enterprise architecture, Pro-Dev extensibility and ALM for Banking and Energy leaders. Genoa, Italy / Remote.">
+    <meta name="description" content="Alessio Malerba, senior Power Platform solution architect (PL-600, PL-400) and pro-dev security specialist. Legacy modernisation in banking, pro-dev extensibility and ALM, and open-source work on AI agents (MCP) and verifiable systems on EVM chains. Genoa, Italy / remote.">
+    <link rel="canonical" href="https://alessiomalerba.it/">
+    <meta name="theme-color" content="#000000">
+    <meta name="color-scheme" content="dark light">
 
-    <link rel="icon" type="image/png" href="/n0g4d.png">
-    <link rel="apple-touch-icon" href="/n0g4d.png">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://alessiomalerba.it/">
+    <meta property="og:site_name" content="Alessio Malerba">
+    <meta property="og:title" content="Alessio Malerba — Power Platform Solution Architect &amp; Pro-Dev Security Specialist">
+    <meta property="og:description" content="Automate what you can verify. Put a person in front of everything else. Legacy modernisation in banking, pro-dev extensibility and ALM, open-source work on AI agents and verifiable systems.">
+    <meta property="og:image" content="https://alessiomalerba.it/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Automate what you can verify. Put a person in front of everything else. Alessio Malerba, Power Platform solution architect.">
+    <meta name="twitter:card" content="summary_large_image">
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="n0g4d.png">
+    <link rel="apple-touch-icon" href="n0g4d.png">
+
+    <link rel="preload" href="assets/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/atkinson-hyperlegible-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Colours are inverted before first paint if the visitor chose that last time. -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'SF Mono', 'ui-monospace', 'monospace'],
-                    }
-                }
-            }
-        }
+        document.documentElement.className = 'js';
+        try {
+            var t = localStorage.getItem('theme');
+            if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
     </script>
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/site.js" defer onerror="document.documentElement.className=''"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- AnchorJS — documentation-style anchor hashes -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.3.1/anchor.min.js"></script>
-
-    <style>
-        ::selection { background: #ffffff; color: #000000; }
-
-        /* Offset for the fixed navbar when jumping to an anchor */
-        h2[id], h3[id], section[id] { scroll-margin-top: 6rem; }
-
-        /* ── AnchorJS: dark theme integration ── */
-        .anchorjs-link {
-            font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
-            font-weight: 400;
-            color: #3f3f46;              /* zinc-700 */
-            text-decoration: none;
-            transition: color .15s ease, opacity .15s ease;
-        }
-        .anchorjs-link:hover,
-        .anchorjs-link:focus-visible {
-            color: #ffffff;
-            text-decoration: none;
-        }
-        /* Keyboard users need the anchor to surface without hover */
-        .anchorjs-link:focus-visible {
-            opacity: 1;
-            outline: 1px solid #27272a;
-            outline-offset: 2px;
-        }
-        h2 .anchorjs-link { font-size: 0.7em; }
-        h3 .anchorjs-link { font-size: 0.85em; }
-    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alessio Malerba",
+        "url": "https://alessiomalerba.it/",
+        "email": "mailto:info@alessiomalerba.it",
+        "jobTitle": "Senior Power Platform Solution Architect & Pro-Dev Security Specialist",
+        "description": "Independent consultant. Legacy modernisation in banking, pro-dev extensibility and ALM on Microsoft Power Platform; open-source work on AI agents (MCP) and verifiable systems on EVM chains.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Genoa", "addressCountry": "IT" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "University of Genova" },
+        "knowsLanguage": ["it", "en"],
+        "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "name": "Microsoft Certified: Power Platform Solution Architect Expert (PL-600)" },
+            { "@type": "EducationalOccupationalCredential", "name": "Microsoft Certified: Power Platform Developer Associate (PL-400)" }
+        ],
+        "knowsAbout": ["Microsoft Power Platform", "Power Automate Desktop", "Dataverse", "Power Pages", "PCF", "Application Lifecycle Management", "Model Context Protocol", "Solidity", "Applied cryptography"],
+        "sameAs": ["https://github.com/N0g4D", "https://www.linkedin.com/in/alessio-malerba-969088204/"]
+    }
+    </script>
 </head>
-<body class="bg-black text-white antialiased selection:bg-white selection:text-black">
+<body>
 
-    <!-- ─── NAVBAR ─── -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-black border-b border-zinc-800">
-        <div class="max-w-5xl mx-auto flex items-center justify-between px-6 h-16">
-            <a href="#" class="font-mono text-sm text-white tracking-tight shrink-0">
-                alessio malerba
-            </a>
-            <nav class="hidden md:flex items-center gap-6 font-mono text-sm text-zinc-400">
-                <a href="#services" class="hover:text-white transition-colors">services</a>
-                <a href="#experience" class="hover:text-white transition-colors">experience</a>
-                <a href="#ancorhash" class="hover:text-white transition-colors">ancorhash</a>
-                <a href="#pricing" class="hover:text-white transition-colors">pricing</a>
-                <a href="#contact" class="hover:text-white transition-colors">contact</a>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- ─── HEADER ─── -->
+    <header class="site-header">
+        <div class="wrap bar">
+            <a class="wordmark" href="#top">alessio malerba</a>
+            <span class="crumb" id="crumb" aria-hidden="true"></span>
+            <nav class="nav" id="nav" aria-label="Sections">
+                <a href="#services">Services</a>
+                <a href="#experience">Experience</a>
+                <a href="#work">Open source</a>
+                <a href="#contact">Contact</a>
             </nav>
-            <a href="mailto:info@alessiomalerba.it"
-               class="hidden lg:inline-flex items-center font-mono text-sm text-black bg-white hover:bg-zinc-200 px-4 py-1.5 rounded-sm transition-colors shrink-0">
-                get in touch
-            </a>
-            <button id="mobile-toggle" class="md:hidden p-2 -mr-2 text-zinc-400 hover:text-white transition-colors" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="square" stroke-width="1.5" d="M4 7h16M4 12h16M4 17h16"/>
-                </svg>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden border-t border-zinc-800 bg-black">
-            <div class="flex flex-col px-6 py-5 gap-4 font-mono text-sm text-zinc-400">
-                <a href="#services" class="hover:text-white transition-colors">services</a>
-                <a href="#experience" class="hover:text-white transition-colors">experience</a>
-                <a href="#ancorhash" class="hover:text-white transition-colors">ancorhash</a>
-                <a href="#pricing" class="hover:text-white transition-colors">pricing</a>
-                <a href="#contact" class="hover:text-white transition-colors">contact</a>
-                <a href="mailto:info@alessiomalerba.it" class="text-white">info@alessiomalerba.it</a>
+            <div class="tools">
+                <button type="button" class="tool" id="open-palette" aria-haspopup="dialog" data-js hidden>
+                    <span class="tool-wide">Commands</span><span class="tool-narrow">Menu</span>
+                    <kbd id="palette-kbd">Ctrl K</kbd>
+                </button>
+                <button type="button" class="tool" id="invert" aria-pressed="false" data-js hidden>
+                    <span class="glyph-invert" aria-hidden="true"></span>
+                    <span class="vh">Invert colours</span>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- ─── HERO ─── -->
-    <section class="min-h-screen flex items-center px-6 pt-24 pb-16">
-        <div class="max-w-5xl mx-auto w-full">
-            <p class="font-mono text-sm text-zinc-500 mb-8">
-                genoa, italy &middot; remote &middot; available for contracts
-            </p>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.1] tracking-tight max-w-3xl">
-                Senior Power Platform Solution Architect &amp; Pro-Dev Security Specialist.
-            </h1>
-            <p class="mt-8 text-lg text-zinc-400 leading-relaxed max-w-2xl">
-                Microsoft Certified Solution Architect Expert (PL-600) with a Computer Science degree and a
-                background in advanced cybersecurity. I specialise in enterprise-scale architecture, Pro-Dev
-                extensibility with React, TypeScript and PCF, and Application Lifecycle Management across
-                complex cloud and legacy environments.
-            </p>
-            <p class="mt-4 text-lg text-zinc-400 leading-relaxed max-w-2xl">
-                Proven track record of auditing, refactoring and delivering secure, API-driven workflows for
-                Banking and Energy leaders.
-            </p>
+    <main id="main">
 
-            <!-- Certification badges -->
-            <div class="mt-8 flex flex-wrap gap-2">
-                <span class="font-mono text-xs text-zinc-400 border border-zinc-800 rounded-sm px-3 py-1.5">
-                    <span class="text-zinc-600">cert:</span> PL-600 Solution Architect Expert
-                </span>
-                <span class="font-mono text-xs text-zinc-400 border border-zinc-800 rounded-sm px-3 py-1.5">
-                    <span class="text-zinc-600">cert:</span> PL-400 Developer Associate
-                </span>
-                <span class="font-mono text-xs text-zinc-400 border border-zinc-800 rounded-sm px-3 py-1.5">
-                    <span class="text-zinc-600">bg:</span> CyberChallenge.IT — Ethical Hacking
-                </span>
-                <span class="font-mono text-xs text-zinc-400 border border-zinc-800 rounded-sm px-3 py-1.5">
-                    <span class="text-zinc-600">lang:</span> English IELTS C1 &middot; Italian native
-                </span>
-            </div>
+        <!-- ─── HERO ─── -->
+        <section class="hero" id="top" aria-labelledby="who">
+            <div class="wrap">
+                <h1 class="byline" id="who"><strong>Alessio Malerba</strong>, senior Power Platform solution architect and pro-dev security specialist</h1>
+                <p class="print-only">info@alessiomalerba.it, alessiomalerba.it, github.com/N0g4D, linkedin.com/in/alessio-malerba-969088204</p>
 
-            <div class="mt-12 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <a href="mailto:info@alessiomalerba.it"
-                   class="inline-flex items-center justify-center gap-2 font-mono text-sm bg-white text-black px-6 py-3 rounded-sm hover:bg-zinc-200 transition-colors">
-                    info@alessiomalerba.it
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="square" stroke-width="1.5" d="M5 12h14m0 0l-5-5m5 5l-5 5"/>
-                    </svg>
-                </a>
-                <a href="#experience"
-                   class="inline-flex items-center justify-center gap-2 font-mono text-sm border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 px-6 py-3 rounded-sm transition-colors">
-                    view track record
-                </a>
-            </div>
+                <p class="motto" id="motto"><span>Automate what you can verify.</span> <span>Put a person in front of everything else.</span></p>
 
-            <!-- terminal block -->
-            <div class="mt-16 border border-zinc-800 rounded-sm max-w-3xl">
-                <div class="border-b border-zinc-800 px-4 py-2 font-mono text-xs text-zinc-600">
-                    stack
-                </div>
-                <div class="px-4 py-4 font-mono text-sm text-zinc-400 leading-7 overflow-x-auto">
-                    <span class="text-zinc-600 select-none">$ </span><span class="text-zinc-600">platform&nbsp;&nbsp;</span>Power Apps (Canvas / Model-Driven) &middot; Power Pages &middot; Cloud Flows &middot; Power BI<br>
-                    <span class="text-zinc-600 select-none">$ </span><span class="text-zinc-600">data&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Dataverse &middot; SQL &middot; RESTful APIs &middot; Custom Connectors<br>
-                    <span class="text-zinc-600 select-none">$ </span><span class="text-zinc-600">pro-dev&nbsp;&nbsp;&nbsp;</span>React &middot; TypeScript &middot; C# &middot; Node.js &middot; PCF &middot; Git<br>
-                    <span class="text-zinc-600 select-none">$ </span><span class="text-zinc-600">alm&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Azure DevOps &middot; CI/CD pipelines &middot; CoE Starter Kit<br>
-                    <span class="text-zinc-600 select-none">$ </span><span class="text-zinc-600">rpa&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Power Automate Desktop &middot; legacy assessment &amp; refactoring<br>
-                    <span class="text-zinc-600 select-none">$ </span><span class="text-zinc-600">ai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Copilot Studio &middot; Azure AI Document Intelligence<br>
-                    <span class="text-zinc-600 select-none">$ </span><span class="text-zinc-600">security&nbsp;&nbsp;</span>Dataverse security &middot; DLP governance &middot; architecture design
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── SERVICES ─── -->
-    <section id="services" class="py-24 lg:py-32 border-t border-zinc-800">
-        <div class="max-w-5xl mx-auto px-6">
-            <p class="font-mono text-sm text-zinc-500 mb-4">services</p>
-            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
-                Three areas, one engineering approach
-            </h2>
-            <p class="mt-4 text-zinc-400 max-w-2xl">
-                Low-code delivery speed with pro-dev standards: source control, pipelines, code review and a
-                security model designed before the first screen is built.
-            </p>
-
-            <div class="mt-16 grid md:grid-cols-3 border border-zinc-800 rounded-sm divide-y md:divide-y-0 md:divide-x divide-zinc-800">
-
-                <!-- Architecture -->
-                <article class="p-8">
-                    <svg class="w-6 h-6 text-zinc-500 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="square" stroke-width="1.5" d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/>
-                    </svg>
-                    <h3 class="text-lg font-semibold">Architecture &amp; Portals</h3>
-                    <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
-                        Solution architecture for enterprise Power Platform programs: Dataverse data models,
-                        B2B/B2C portals and automated backend flows, integrated with the ERPs your business
-                        already runs on.
-                    </p>
-                    <ul class="mt-6 space-y-2 font-mono text-xs text-zinc-500">
-                        <li>architecture design</li>
-                        <li>power pages &amp; power apps</li>
-                        <li>dataverse &amp; erp integration</li>
-                    </ul>
-                </article>
-
-                <!-- Pro-Dev -->
-                <article class="p-8">
-                    <svg class="w-6 h-6 text-zinc-500 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="square" stroke-width="1.5" d="M8.5 8L4 12l4.5 4M15.5 8l4.5 4-4.5 4M13.5 5l-3 14"/>
-                    </svg>
-                    <h3 class="text-lg font-semibold">Pro-Dev Extensibility &amp; ALM</h3>
-                    <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
-                        When the platform hits its ceiling, I extend it with real code: PCF controls in React
-                        and TypeScript, C# and Node.js backends, custom connectors — released through Azure
-                        DevOps pipelines instead of manual solution exports.
-                    </p>
-                    <ul class="mt-6 space-y-2 font-mono text-xs text-zinc-500">
-                        <li>pcf controls (react / typescript)</li>
-                        <li>custom connectors &amp; rest apis</li>
-                        <li>azure devops &amp; ci/cd alm</li>
-                    </ul>
-                </article>
-
-                <!-- Security & Governance -->
-                <article class="p-8">
-                    <svg class="w-6 h-6 text-zinc-500 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path stroke-linecap="square" stroke-width="1.5" d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6l7-3zM9 12l2 2 4-4"/>
-                    </svg>
-                    <h3 class="text-lg font-semibold">Security, Governance &amp; AI</h3>
-                    <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
-                        Selected for CyberChallenge.IT — the national programme in offensive security, ethical
-                        hacking, binary analysis and applied cryptography. That background is why I design
-                        Dataverse security, DLP policies and tenant governance before anyone writes a flow.
-                    </p>
-                    <ul class="mt-6 space-y-2 font-mono text-xs text-zinc-500">
-                        <li>dataverse security &amp; dlp</li>
-                        <li>coe starter kit &amp; governance</li>
-                        <li>copilot studio &amp; azure ai</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── EXPERIENCE / TRACK RECORD ─── -->
-    <section id="experience" class="py-24 lg:py-32 border-t border-zinc-800">
-        <div class="max-w-5xl mx-auto px-6">
-            <p class="font-mono text-sm text-zinc-500 mb-4">track record</p>
-            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
-                Where the work has landed
-            </h2>
-            <p class="mt-4 text-zinc-400 max-w-2xl">
-                Regulated industries, Tier-1 clients and systems that were already in production when I
-                arrived.
-            </p>
-
-            <div class="mt-16 grid md:grid-cols-3 border border-zinc-800 rounded-sm divide-y md:divide-y-0 md:divide-x divide-zinc-800">
-
-                <!-- MPS -->
-                <article class="p-8 flex flex-col">
-                    <div class="flex items-baseline justify-between gap-3">
-                        <p class="font-mono text-xs text-zinc-600">01 / banking</p>
-                        <p class="font-mono text-xs text-zinc-600 shrink-0">may 2026 &rarr; now</p>
-                    </div>
-                    <h3 class="mt-4 text-lg font-semibold">RPA Turnaround Consultant</h3>
-                    <p class="mt-2 font-mono text-xs text-zinc-500">
-                        Banca Monte dei Paschi di Siena (MPS)<br>
-                        <span class="text-zinc-600">via Aubay &middot; remote</span>
-                    </p>
-                    <ul class="mt-6 space-y-4 text-sm text-zinc-400 leading-relaxed">
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Critical architectural assessment and refactoring of complex legacy RPA workflows built on Power Automate Desktop.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Diagnosed structural bottlenecks and compliance constraints inside a highly secure legacy banking infrastructure, delivering guidelines to mitigate RPA technical debt.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Evaluated the boundary between desktop automation and API-driven cloud integration, structuring documentation for enterprise IT governance.</span>
-                        </li>
-                    </ul>
-                </article>
-
-                <!-- Protiviti -->
-                <article class="p-8 flex flex-col">
-                    <div class="flex items-baseline justify-between gap-3">
-                        <p class="font-mono text-xs text-zinc-600">02 / enterprise portals</p>
-                        <p class="font-mono text-xs text-zinc-600 shrink-0">2025 &rarr; 2026</p>
-                    </div>
-                    <h3 class="mt-4 text-lg font-semibold">Microsoft Solution Architect</h3>
-                    <p class="mt-2 font-mono text-xs text-zinc-500">
-                        Protiviti<br>
-                        <span class="text-zinc-600">hybrid</span>
-                    </p>
-                    <ul class="mt-6 space-y-4 text-sm text-zinc-400 leading-relaxed">
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Architected custom enterprise web portals on Power Pages with React/TypeScript PCF controls, bypassing low-code limits to enforce complex business logic for <strong class="text-white font-medium">200+ active users</strong>.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Led end-to-end design and delivery of a custom ERP solution replacing inefficient legacy workflows, cutting process execution time by roughly <strong class="text-white font-medium">40%</strong>.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Defined code quality standards, enforced DevOps CI/CD practices and mentored junior developers for scalability and ALM compliance.</span>
-                        </li>
-                    </ul>
-                </article>
-
-                <!-- Cluster Reply -->
-                <article class="p-8 flex flex-col">
-                    <div class="flex items-baseline justify-between gap-3">
-                        <p class="font-mono text-xs text-zinc-600">03 / energy &amp; banking</p>
-                        <p class="font-mono text-xs text-zinc-600 shrink-0">2022 &rarr; 2025</p>
-                    </div>
-                    <h3 class="mt-4 text-lg font-semibold">Power Platform Engineer</h3>
-                    <p class="mt-2 font-mono text-xs text-zinc-500">
-                        Cluster Reply<br>
-                        <span class="text-zinc-600">hybrid</span>
-                    </p>
-                    <ul class="mt-6 space-y-4 text-sm text-zinc-400 leading-relaxed">
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Delivered <strong class="text-white font-medium">10+ end-to-end</strong> Power Platform solutions for Tier-1 Energy and Banking clients, digitising paper-based workflows and cutting data entry error rates.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Engineered complex Dataverse data models, Model-Driven apps and automated backend flows, integrating Microsoft Cloud with existing corporate ERPs.</span>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="font-mono text-zinc-600 select-none">-</span>
-                            <span>Applied Agile/Scrum and enterprise project management frameworks to coordinate multi-stage delivery within strict client timelines.</span>
-                        </li>
-                    </ul>
-                </article>
-            </div>
-
-            <!-- Education & training -->
-            <div class="mt-6 grid md:grid-cols-2 border border-zinc-800 rounded-sm divide-y md:divide-y-0 md:divide-x divide-zinc-800">
-                <div class="p-8">
-                    <div class="flex items-baseline justify-between gap-3">
-                        <p class="font-mono text-xs text-zinc-600">specialised training</p>
-                        <p class="font-mono text-xs text-zinc-600 shrink-0">2022</p>
-                    </div>
-                    <h3 class="mt-4 text-lg font-semibold">CyberChallenge.IT</h3>
-                    <p class="mt-2 font-mono text-xs text-zinc-500">CINI — Advanced Cybersecurity &amp; Ethical Hacking</p>
-                    <p class="mt-4 text-sm text-zinc-400 leading-relaxed">
-                        Selected for the national intensive programme in offensive security, ethical hacking,
-                        binary analysis and applied cryptography, trained through CTF wargames.
-                    </p>
-                </div>
-                <div class="p-8">
-                    <div class="flex items-baseline justify-between gap-3">
-                        <p class="font-mono text-xs text-zinc-600">education</p>
-                        <p class="font-mono text-xs text-zinc-600 shrink-0">2019 &rarr; 2022</p>
-                    </div>
-                    <h3 class="mt-4 text-lg font-semibold">BSc Computer Science</h3>
-                    <p class="mt-2 font-mono text-xs text-zinc-500">University of Genova (UNIGE)</p>
-                    <p class="mt-4 text-sm text-zinc-400 leading-relaxed">
-                        Core focus on software engineering, algorithms, compilers, data structures and web
-                        systems architecture.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ─── ANCORHASH ─── -->
-    <section id="ancorhash" class="py-24 lg:py-32 border-t border-zinc-800">
-        <div class="max-w-5xl mx-auto px-6">
-            <p class="font-mono text-sm text-zinc-500 mb-4">open source</p>
-            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
-                Ancorhash
-            </h2>
-            <p class="mt-4 text-zinc-400 max-w-2xl">
-                Environmental compliance and Web3 notarizer. Tamper-evident field reports: the hash is computed
-                locally, anchored on-chain, and the measured parameters are extracted with AI. My flagship
-                open-source project — the clearest demonstration of how I build.
-            </p>
-
-            <div class="mt-12 border border-zinc-800 rounded-sm">
-                <div class="border-b border-zinc-800 px-4 py-2 flex items-center justify-between gap-4 font-mono text-xs text-zinc-600">
-                    <span class="truncate">github.com/N0g4D/azure-web3-notarizer</span>
-                    <span class="shrink-0">.NET 10 &middot; React &middot; Polygon</span>
+                <!-- The digest is computed by site.js, in the browser, from the sentence above. -->
+                <div class="proof no-print" id="proof" data-js hidden>
+                    <span class="digest" id="motto-digest" aria-hidden="true"></span>
+                    <p class="proof-note prose">SHA-256 of the sentence above, computed in your browser a moment ago. Change a comma and it stops matching. <a href="#hasher">Hash your own text or file</a>.</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-zinc-800">
-                    <div class="p-8">
-                        <p class="font-mono text-xs text-zinc-600">01</p>
-                        <h3 class="mt-4 text-lg font-semibold">Zero-data-leakage anchoring</h3>
-                        <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
-                            The SHA-256 digest is computed inside the browser via the native Web Crypto API.
-                            Only those 32 bytes reach the backend, written into the data field of an EIP-1559
-                            transaction on Polygon. The document itself never leaves the operator's device —
-                            which matters when the report carries personal and commercially sensitive data.
-                        </p>
+                <div class="hero-grid">
+                    <div class="lead prose">
+                        <p>I'm a Microsoft-certified solution architect <span class="nowrap">(PL-600)</span> with a computer science degree and a background in offensive security. As an independent consultant I help banking, energy and enterprise teams retire technical debt and extend Power Platform with real code.</p>
+                        <p>Most of my client work today is legacy modernisation in banking: moving ageing RPA and desktop databases onto governed Power Platform architectures. My open-source work sits where that world meets two others, AI agents and verifiable systems on EVM chains.</p>
+                        <div class="actions no-print">
+                            <a class="btn btn-solid" href="mailto:info@alessiomalerba.it">Email info@alessiomalerba.it</a>
+                            <button type="button" class="btn" data-copy="info@alessiomalerba.it" data-js hidden>Copy address</button>
+                            <a class="btn" href="#experience">View track record</a>
+                        </div>
                     </div>
 
-                    <div class="p-8">
-                        <p class="font-mono text-xs text-zinc-600">02</p>
-                        <h3 class="mt-4 text-lg font-semibold">Gas-sponsored relayer</h3>
-                        <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
-                            The organisation never touches a wallet, a private key or a token: the backend
-                            signs and pays. A notarization on Polygon mainnet costs around
-                            <span class="font-mono text-white">$0.0008</span> in gas, priced live from an
-                            on-chain estimate and a CoinGecko oracle. Verification is symmetric — recompute
-                            the hash, compare it on-chain, trust nobody.
-                        </p>
-                    </div>
-
-                    <div class="p-8">
-                        <p class="font-mono text-xs text-zinc-600">03</p>
-                        <h3 class="mt-4 text-lg font-semibold">Opt-in AI extraction</h3>
-                        <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
-                            With explicit consent, Azure AI Document Intelligence and a domain parser turn a
-                            scanned form into strongly-typed values — water temperature, pH, dissolved oxygen
-                            as decimals, not OCR noise. A receiving system can compare them against a
-                            threshold the moment the report is uploaded, instead of weeks later.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="border-t border-zinc-800 px-8 py-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                    <div class="font-mono text-xs text-zinc-500 leading-6">
-                        <span class="text-zinc-600">backend&nbsp;&nbsp;</span>C# .NET 10 &middot; Azure Functions Isolated &middot; Clean Architecture &middot; Nethereum<br>
-                        <span class="text-zinc-600">frontend&nbsp;</span>React &middot; TypeScript &middot; Vite &middot; Tailwind CSS<br>
-                        <span class="text-zinc-600">platform&nbsp;</span>Azure Key Vault &middot; Managed Identity &middot; OpenTelemetry &middot; Turnstile
-                    </div>
-                    <a href="https://github.com/N0g4D/azure-web3-notarizer" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center gap-2 font-mono text-sm border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 px-5 py-2.5 rounded-sm transition-colors shrink-0">
-                        view on github
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="square" stroke-width="1.5" d="M9 15L19 5m0 0h-6m6 0v6M18 14v5H5V6h5"/>
-                        </svg>
-                    </a>
+                    <dl class="ledger">
+                        <div><dt>Based</dt><dd>Genoa, Italy, remote</dd></div>
+                        <div><dt>Status</dt><dd>Available for contracts</dd></div>
+                        <div><dt>PL-600</dt><dd>Solution Architect Expert</dd></div>
+                        <div><dt>PL-400</dt><dd>Developer Associate</dd></div>
+                        <div><dt>Security</dt><dd>CyberChallenge.IT, 2022</dd></div>
+                        <div><dt>Degree</dt><dd>BSc Computer Science</dd></div>
+                        <div><dt>Languages</dt><dd>Italian, English (IELTS C1)</dd></div>
+                    </dl>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ─── PRICING ─── -->
-    <section id="pricing" class="py-24 lg:py-32 border-t border-zinc-800">
-        <div class="max-w-5xl mx-auto px-6">
-            <p class="font-mono text-sm text-zinc-500 mb-4">pricing</p>
-            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
-                Transparent engagement models
-            </h2>
-            <p class="mt-4 text-zinc-400 max-w-2xl">
-                Every project carries its own complexity. These are the ways we can work together.
-            </p>
+        <!-- ─── SERVICES ─── -->
+        <section class="section" id="services" aria-labelledby="services-h">
+            <div class="wrap section-grid">
+                <header class="section-head">
+                    <h2 id="services-h" data-anchor="services">Services</h2>
+                    <p class="aside no-print"><a class="btn btn-small" href="#brief">Write a brief</a></p>
+                </header>
 
-            <div class="mt-16 grid md:grid-cols-3 border border-zinc-800 rounded-sm divide-y md:divide-y-0 md:divide-x divide-zinc-800">
+                <div class="section-body prose">
+                    <p class="intro">Low-code delivery speed with pro-dev standards: source control, pipelines, code review and a security model designed before the first screen is built.</p>
 
-                <!-- Consulting -->
-                <article class="p-8 flex flex-col">
-                    <h3 class="text-lg font-semibold">Consulting</h3>
-                    <p class="mt-2 text-sm text-zinc-400">Assessment, architecture review and technical advisory.</p>
-                    <p class="mt-8 font-mono text-2xl text-white">on request</p>
-                    <p class="mt-1 font-mono text-xs text-zinc-600">hourly or daily rate</p>
-                    <ul class="mt-8 space-y-3 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>Architecture &amp; security assessment</li>
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>DLP &amp; tenant governance review</li>
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>Advisory sessions</li>
-                    </ul>
-                    <a href="mailto:info@alessiomalerba.it"
-                       class="mt-8 inline-flex items-center justify-center font-mono text-sm border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 px-4 py-2.5 rounded-sm transition-colors">
-                        get in touch
-                    </a>
-                </article>
-
-                <!-- Project -->
-                <article class="p-8 flex flex-col">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="text-lg font-semibold">Project</h3>
-                        <span class="font-mono text-xs text-zinc-500 border border-zinc-800 rounded-sm px-2 py-0.5 shrink-0">most common</span>
+                    <div class="rows block">
+                        <article class="row">
+                            <h3>Legacy modernisation</h3>
+                            <div class="text">
+                                <p>Assessment, refactoring and migration of ageing automation and desktop databases: Blue Prism to Power Automate Desktop, Microsoft Access to Power Apps on SQL Server. Desktop robots stay only where a legacy system exposes no API.</p>
+                                <p class="keys">Power Automate (cloud and desktop), Blue Prism migration, SQL Server, on-premises data gateway</p>
+                            </div>
+                        </article>
+                        <article class="row">
+                            <h3>Architecture and portals</h3>
+                            <div class="text">
+                                <p>Solution architecture for enterprise Power Platform programmes: Dataverse data models, B2B and B2C portals and automated backend flows, integrated with the ERPs your business already runs on.</p>
+                                <p class="keys">Architecture design, Power Pages and Power Apps, Dataverse and ERP integration</p>
+                            </div>
+                        </article>
+                        <article class="row">
+                            <h3>Pro-dev extensibility and ALM</h3>
+                            <div class="text">
+                                <p>When the platform hits its ceiling, I extend it with real code: PCF controls in React and TypeScript, C# and Node.js backends, custom connectors. All of it is released through pipelines instead of manual solution exports.</p>
+                                <p class="keys">PCF controls (React, TypeScript), custom connectors and REST APIs, Azure DevOps and CI/CD</p>
+                            </div>
+                        </article>
+                        <article class="row">
+                            <h3>Security, governance and AI</h3>
+                            <div class="text">
+                                <p>I was selected for CyberChallenge.IT, the national programme in offensive security, ethical hacking, binary analysis and applied cryptography. That background is why I design Dataverse security, DLP policies and tenant governance before anyone writes a flow.</p>
+                                <p class="keys">Dataverse security and DLP, CoE Starter Kit and governance, Copilot Studio and Azure AI</p>
+                            </div>
+                        </article>
                     </div>
-                    <p class="mt-2 text-sm text-zinc-400">End-to-end delivery with defined deliverables.</p>
-                    <p class="mt-8 font-mono text-2xl text-white">fixed quote</p>
-                    <p class="mt-1 font-mono text-xs text-zinc-600">defined scope, fixed price</p>
-                    <ul class="mt-8 space-y-3 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>Analysis &amp; solution design</li>
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>Development &amp; integration</li>
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>Testing, CI/CD &amp; go-live</li>
-                    </ul>
-                    <a href="mailto:info@alessiomalerba.it"
-                       class="mt-8 inline-flex items-center justify-center font-mono text-sm border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 px-4 py-2.5 rounded-sm transition-colors">
-                        get in touch
-                    </a>
-                </article>
 
-                <!-- Retainer -->
-                <article class="p-8 flex flex-col">
-                    <h3 class="text-lg font-semibold">Retainer</h3>
-                    <p class="mt-2 text-sm text-zinc-400">Ongoing support embedded with your team.</p>
-                    <p class="mt-8 font-mono text-2xl text-white">monthly</p>
-                    <p class="mt-1 font-mono text-xs text-zinc-600">agreed capacity</p>
-                    <ul class="mt-8 space-y-3 text-sm text-zinc-400">
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>Embedded in your team</li>
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>Evolutionary maintenance</li>
-                        <li class="flex gap-3"><span class="font-mono text-zinc-600 select-none">-</span>Mentoring &amp; enablement</li>
-                    </ul>
-                    <a href="mailto:info@alessiomalerba.it"
-                       class="mt-8 inline-flex items-center justify-center font-mono text-sm border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-600 px-4 py-2.5 rounded-sm transition-colors">
-                        get in touch
-                    </a>
-                </article>
-            </div>
-        </div>
-    </section>
+                    <h3 class="sub" id="pricing" data-anchor="pricing">How we can work</h3>
+                    <p>Every project carries its own complexity. These are the ways we can work together.</p>
 
-    <!-- ─── CONTACT ─── -->
-    <section id="contact" class="py-24 lg:py-32 border-t border-zinc-800">
-        <div class="max-w-5xl mx-auto px-6">
-            <p class="font-mono text-sm text-zinc-500 mb-4">contact</p>
-            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight">
-                Let's talk about your project
-            </h2>
-            <p class="mt-4 text-zinc-400 max-w-2xl">
-                Available for architecture and advisory contracts. Get in touch for an initial call — no
-                commitment, reply within 24 hours.
-            </p>
-
-            <div class="mt-12 border border-zinc-800 rounded-sm">
-                <div class="border-b border-zinc-800 px-4 py-2 font-mono text-xs text-zinc-600">
-                    contact
-                </div>
-                <div class="p-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-                    <div class="font-mono text-sm leading-7">
-                        <p><span class="text-zinc-600">email&nbsp;&nbsp;&nbsp;&nbsp;</span><a href="mailto:info@alessiomalerba.it" class="text-white hover:underline break-all">info@alessiomalerba.it</a></p>
-                        <p><span class="text-zinc-600">github&nbsp;&nbsp;&nbsp;</span><a href="https://github.com/N0g4D" target="_blank" rel="noopener noreferrer" class="text-zinc-400 hover:text-white transition-colors">github.com/N0g4D</a></p>
-                        <p><span class="text-zinc-600">based&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="text-zinc-400">Genoa, Italy &middot; remote</span></p>
+                    <div class="rows block">
+                        <article class="row">
+                            <div>
+                                <h4>Consulting</h4>
+                                <p class="billing">Hourly or daily rate, on request</p>
+                                <p class="no-print"><a class="btn btn-small" href="#brief" data-brief="consulting">Start a consulting brief</a></p>
+                            </div>
+                            <div class="text">
+                                <p>Assessment, architecture review and technical advisory.</p>
+                                <ul class="dashed">
+                                    <li>Architecture and security assessment</li>
+                                    <li>DLP and tenant governance review</li>
+                                    <li>Advisory sessions</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="row">
+                            <div>
+                                <h4>Project</h4>
+                                <p class="billing">Fixed quote for a defined scope. The most common.</p>
+                                <p class="no-print"><a class="btn btn-small" href="#brief" data-brief="project">Start a project brief</a></p>
+                            </div>
+                            <div class="text">
+                                <p>End-to-end delivery with defined deliverables.</p>
+                                <ul class="dashed">
+                                    <li>Analysis and solution design</li>
+                                    <li>Development and integration</li>
+                                    <li>Testing, CI/CD and go-live</li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="row">
+                            <div>
+                                <h4>Retainer</h4>
+                                <p class="billing">Monthly, for an agreed capacity</p>
+                                <p class="no-print"><a class="btn btn-small" href="#brief" data-brief="retainer">Start a retainer brief</a></p>
+                            </div>
+                            <div class="text">
+                                <p>Ongoing support embedded with your team.</p>
+                                <ul class="dashed">
+                                    <li>Embedded in your team</li>
+                                    <li>Evolutionary maintenance</li>
+                                    <li>Mentoring and enablement</li>
+                                </ul>
+                            </div>
+                        </article>
                     </div>
-                    <a href="mailto:info@alessiomalerba.it"
-                       class="inline-flex items-center justify-center gap-2 font-mono text-sm bg-white text-black hover:bg-zinc-200 px-6 py-3 rounded-sm transition-colors shrink-0">
-                        send an email
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="square" stroke-width="1.5" d="M5 12h14m0 0l-5-5m5 5l-5 5"/>
-                        </svg>
-                    </a>
+
+                    <h3 class="sub cv" id="stack" data-anchor="stack">Stack</h3>
+
+                    <dl class="rows rows-tight block cv">
+                        <div class="row">
+                            <dt>Architecture and governance</dt>
+                            <dd>Power Platform solution architecture, Dataverse security, DLP policies, Center of Excellence (CoE), ALM and CI/CD with GitHub Actions and Azure DevOps</dd>
+                        </div>
+                        <div class="row">
+                            <dt>Automation and legacy modernisation</dt>
+                            <dd>Power Automate (cloud and desktop), Blue Prism migration, Power Apps (canvas and model-driven), Power Pages, Power BI, SQL Server (T-SQL, stored procedures), on-premises data gateway</dd>
+                        </div>
+                        <div class="row">
+                            <dt>Pro-dev extensibility</dt>
+                            <dd>C# and .NET 10, Azure Functions, React, TypeScript, Node.js, custom connectors, Power Apps Component Framework (PCF)</dd>
+                        </div>
+                        <div class="row">
+                            <dt>AI and agents</dt>
+                            <dd>Model Context Protocol (MCP), Microsoft Graph, Microsoft Entra ID, Copilot Studio, Azure AI Document Intelligence, Python</dd>
+                        </div>
+                        <div class="row">
+                            <dt>Web3 and security</dt>
+                            <dd>Solidity, Foundry, Slither, MUD v2, ERC-6551, FHE (Zama FHEVM), Nethereum, viem, applied cryptography</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- ─── EXPERIENCE ─── -->
+        <section class="section" id="experience" aria-labelledby="experience-h">
+            <div class="wrap section-grid">
+                <header class="section-head">
+                    <h2 id="experience-h" data-anchor="experience">Experience</h2>
+                    <p class="aside no-print" data-js hidden><button type="button" class="btn btn-small" data-action="print">Print as a CV</button></p>
+                </header>
+
+                <div class="section-body prose">
+                    <p class="intro">Regulated industries, Tier-1 clients and systems that were already in production when I arrived.</p>
+
+                    <div class="entries block">
+                        <details class="entry entry-dated" open>
+                            <summary>
+                                <span class="when">May 2026 – now</span>
+                                <h3>Independent solution architect and tech lead</h3>
+                                <span class="gist">Freelance, remote. <span class="gist-more">Legacy modernisation in banking, architectural refactoring and pro-dev integrations.</span></span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <h4>In progress</h4>
+                                <ul class="dashed">
+                                    <li><strong>Blue Prism to Power Automate Desktop.</strong> Migrating back-office processes for two Italian banks: a monthly securities-statement control, checked for parity against production Blue Prism logs, and a set of account and cheque inquiry flows built once for both banks.</li>
+                                    <li><strong>Microsoft Access to Power Apps and SQL Server.</strong> Re-platforming a legacy Access line-of-business application: Power Apps front end, SQL Server on-premises through the data gateway, stored procedures instead of a custom API layer, Power Automate cloud flows for orchestration.</li>
+                                    <li><strong>Production support</strong> for an enterprise BPO automation solution built on Power Platform.</li>
+                                </ul>
+                                <h4>RPA turnaround in banking</h4>
+                                <ul class="dashed">
+                                    <li>Critical architectural assessment and refactoring of complex legacy RPA workflows built on Power Automate Desktop.</li>
+                                    <li>Diagnosed structural bottlenecks and compliance constraints inside a highly secure legacy banking infrastructure, delivering guidelines to mitigate RPA technical debt.</li>
+                                    <li>Evaluated the boundary between desktop automation and API-driven cloud integration, structuring documentation for enterprise IT governance.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details class="entry entry-dated">
+                            <summary>
+                                <span class="when">2025 – 2026</span>
+                                <h3>Microsoft Solution Architect</h3>
+                                <span class="gist">Protiviti, hybrid. <span class="gist-more">Power Pages portals for 200+ active users, and a custom ERP that cut process execution time by roughly 40%.</span></span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <ul class="dashed">
+                                    <li>Architected custom enterprise web portals on Power Pages with React and TypeScript PCF controls, going past low-code limits to enforce complex business logic for <strong>200+ active users</strong>.</li>
+                                    <li>Led end-to-end design and delivery of a custom ERP solution replacing inefficient legacy workflows, cutting process execution time by roughly <strong>40%</strong>.</li>
+                                    <li>Defined code quality standards, enforced DevOps CI/CD practices and mentored junior developers for scalability and ALM compliance.</li>
+                                </ul>
+                            </div>
+                        </details>
+
+                        <details class="entry entry-dated">
+                            <summary>
+                                <span class="when">2022 – 2025</span>
+                                <h3>Power Platform Engineer</h3>
+                                <span class="gist">Cluster Reply, hybrid. <span class="gist-more">10+ end-to-end Power Platform solutions for Tier-1 energy and banking clients.</span></span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <ul class="dashed">
+                                    <li>Delivered <strong>10+ end-to-end</strong> Power Platform solutions for Tier-1 energy and banking clients, digitising paper-based workflows and cutting data entry error rates.</li>
+                                    <li>Engineered complex Dataverse data models, model-driven apps and automated backend flows, integrating Microsoft Cloud with existing corporate ERPs.</li>
+                                    <li>Applied Agile, Scrum and enterprise project management frameworks to coordinate multi-stage delivery within strict client timelines.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+
+                    <h3 class="sub" id="education" data-anchor="education">Training and education</h3>
+
+                    <div class="rows block">
+                        <div class="row">
+                            <p class="when">2022</p>
+                            <div class="text">
+                                <h4>CyberChallenge.IT</h4>
+                                <p>CINI, advanced cybersecurity and ethical hacking. Selected for the national intensive programme in offensive security, ethical hacking, binary analysis and applied cryptography, trained through CTF wargames.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="when">2019 – 2022</p>
+                            <div class="text">
+                                <h4>BSc Computer Science</h4>
+                                <p>University of Genova (UNIGE). Core focus on software engineering, algorithms, compilers, data structures and web systems architecture.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="when">Certifications</p>
+                            <div class="text">
+                                <h4>Microsoft Certified</h4>
+                                <ul class="dashed">
+                                    <li>Power Platform Solution Architect Expert <span class="nowrap">(PL-600)</span></li>
+                                    <li>Power Platform Developer Associate <span class="nowrap">(PL-400)</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── OPEN SOURCE ─── -->
+        <section class="section" id="work" aria-labelledby="work-h">
+            <div class="wrap section-grid">
+                <header class="section-head">
+                    <h2 id="work-h" data-anchor="work">Open source</h2>
+                    <div class="chips no-print" id="filters" role="group" aria-label="Filter projects by area" data-js hidden>
+                        <button type="button" class="chip" data-filter="all" aria-pressed="true">All <span class="count"></span></button>
+                        <button type="button" class="chip" data-filter="agents" aria-pressed="false">AI agents <span class="count"></span></button>
+                        <button type="button" class="chip" data-filter="web3" aria-pressed="false">Web3 <span class="count"></span></button>
+                        <button type="button" class="chip" data-filter="power-platform" aria-pressed="false">Power Platform <span class="count"></span></button>
+                    </div>
+                </header>
+
+                <div class="section-body prose">
+                    <p class="intro">My open-source work sits where enterprise delivery meets two other worlds: AI agents, and verifiable, privacy-preserving systems on EVM chains.</p>
+
+                    <div class="entries block" id="projects">
+
+                        <details class="entry entry-named project" id="omega-connect" data-areas="agents">
+                            <summary>
+                                <h3>omega-connect</h3>
+                                <span class="area">AI agents</span>
+                                <span class="gist">Tool connections for OmegaHive. Agents reach outside tools through MCP servers, and a person approves every write.</span>
+                                <span class="repo print-only">github.com/N0g4D/omega-connect</span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <p>An OmegaHive app for <a href="https://github.com/singnet/Omega" rel="noopener">Omega</a>, SingularityNET's open-source agent framework. It lets the minds in a hive use outside tools through MCP servers, with Microsoft 365 as the first showcase.</p>
+                                <ul class="dashed">
+                                    <li>A tool counts as a read only after a person has reviewed it.</li>
+                                    <li>Every write waits for a named person's approval.</li>
+                                    <li>A tool whose definition changes drops back to write.</li>
+                                </ul>
+                                <p>Demoed end to end on a live hive against a Microsoft 365 tenant: a Teams channel read, then an approved post.</p>
+                                <p class="keys"><b>Built with</b> Python, MCP, Microsoft Entra OAuth, Microsoft Graph. Apache-2.0.</p>
+                                <p><a class="btn btn-small" href="https://github.com/N0g4D/omega-connect" rel="noopener">omega-connect on GitHub</a></p>
+                            </div>
+                        </details>
+
+                        <details class="entry entry-named project" id="omega-mcp" data-areas="agents">
+                            <summary>
+                                <h3>omega-mcp</h3>
+                                <span class="area">AI agents</span>
+                                <span class="gist">An MCP client plugin for an Omega agent that runs on its own.</span>
+                                <span class="repo print-only">github.com/N0g4D/omega-mcp</span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <p>The agent gets three tools to list, inspect and call the MCP servers its operator configures. A tool that changes data is refused unless the operator allows it, and the plugin stays off until it is switched on.</p>
+                                <p class="keys"><b>Built with</b> Python, MeTTa, MCP. Apache-2.0.</p>
+                                <p><a class="btn btn-small" href="https://github.com/N0g4D/omega-mcp" rel="noopener">omega-mcp on GitHub</a></p>
+                            </div>
+                        </details>
+
+                        <details class="entry entry-named project" id="ancorhash" data-areas="web3" open>
+                            <summary>
+                                <h3>Ancorhash</h3>
+                                <span class="area">Web3</span>
+                                <span class="gist">B2B document notarisation on EVM chains with zero data leakage: the document never leaves the device.</span>
+                                <span class="repo print-only">github.com/N0g4D/azure-web3-notarizer</span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <p>Proof of existence and integrity for enterprise documents, without the compliance and UX hurdles of a typical Web3 application.</p>
+                                <ul class="dashed">
+                                    <li><strong>Zero data leakage.</strong> The SHA-256 digest is computed inside the browser with the native Web Crypto API. Only those 32 bytes reach the backend, written into the data field of an EIP-1559 transaction.</li>
+                                    <li><strong>Gas-sponsored relayer.</strong> The organisation never touches a wallet, a private key or a token: the backend signs and pays. Verification is symmetric: recompute the hash, compare it on-chain, trust nobody.</li>
+                                    <li><strong>Fiat-ready billing.</strong> A notarisation on Polygon mainnet costs around $0.0008 in gas, priced live from an on-chain estimate and a CoinGecko oracle.</li>
+                                    <li><strong>Opt-in extraction.</strong> With explicit consent, Azure AI Document Intelligence turns a scanned form into typed values that a receiving system can check on upload.</li>
+                                </ul>
+                                <p>At ETHRome 2026 I prototyped a <a href="https://github.com/N0g4D/azure-web3-notarizer/tree/ethrome-2026" rel="noopener">Confidential RWA Vault</a> on top of it: encrypted storage on Swarm, a queryable index with expiry on Arkiv, an ERC-721 anchor on Avalanche Fuji. Next: a hosted deployment on Azure Functions and an end-to-end demo driven by a Power Automate Desktop flow.</p>
+
+                                <!-- Live demo of step one. Everything here runs in the visitor's browser. -->
+                                <div class="hasher no-print" id="hasher" data-js hidden>
+                                    <h4>Try step one here</h4>
+                                    <p>Type something or pick a file. Your browser computes the digest; nothing is uploaded, because this page has nowhere to upload it to.</p>
+
+                                    <div class="field">
+                                        <label for="hash-text">Text to hash</label>
+                                        <textarea id="hash-text" rows="2" spellcheck="false" autocomplete="off">Automate what you can verify. Put a person in front of everything else.</textarea>
+                                    </div>
+                                    <div class="inline">
+                                        <button type="button" class="btn btn-small" id="hash-pick">Choose a file instead</button>
+                                        <input type="file" id="hash-file" class="vh" tabindex="-1" aria-label="File to hash">
+                                        <span class="hint">or drop one on this box</span>
+                                    </div>
+
+                                    <div class="hasher-out">
+                                        <span class="digest" id="hash-digest"></span>
+                                        <p id="hash-meta" role="status"></p>
+                                    </div>
+                                    <div class="inline">
+                                        <button type="button" class="btn btn-small" id="hash-copy">Copy digest</button>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="hash-expected">Verify against a digest you already have</label>
+                                        <input type="text" id="hash-expected" class="mono" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="hash-verdict-line">
+                                        <p class="hint" id="hash-verdict-line" role="status"><span class="verdict" id="hash-verdict" data-state="idle">Paste 64 hex characters to compare</span></p>
+                                    </div>
+
+                                    <p class="hint">That is all Ancorhash sends: 32 bytes. Anchoring them on-chain needs the backend, which this page does not have.</p>
+                                </div>
+
+                                <p class="keys"><b>Built with</b> C# and .NET 10, Azure Functions (isolated worker), Nethereum, React, TypeScript, Vite, Azure Key Vault, OpenTelemetry, Cloudflare Turnstile.</p>
+                                <p><a class="btn btn-small" href="https://github.com/N0g4D/azure-web3-notarizer" rel="noopener">Ancorhash on GitHub</a></p>
+                            </div>
+                        </details>
+
+                        <details class="entry entry-named project" id="atlantysm" data-areas="web3">
+                            <summary>
+                                <h3>Atlantysm</h3>
+                                <span class="area">Web3</span>
+                                <span class="gist">A fully on-chain game in which every crystal is an account that plays on its own behalf.</span>
+                                <span class="repo print-only">github.com/N0g4D/atlantysm</span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <p>The MVP runs on MUD v2: every crystal is an ERC-6551 account, combat is commit–reveal, and 152 Foundry tests cover the contracts. There is no game server, and the client is only a view of the chain.</p>
+                                <p>Now designing Season 0 on Sepolia: a single immutable contract where each crystal's element, level and mana stay encrypted with Zama's FHEVM, and a duel publishes only who won.</p>
+                                <p class="keys"><b>Built with</b> Solidity, Foundry, MUD v2, FHEVM, React, viem.</p>
+                                <p><a class="btn btn-small" href="https://github.com/N0g4D/atlantysm" rel="noopener">Atlantysm on GitHub</a></p>
+                            </div>
+                        </details>
+
+                        <details class="entry entry-named project" id="pcf-mega-library" data-areas="power-platform">
+                            <summary>
+                                <h3>PCF Mega Library</h3>
+                                <span class="area">Power Platform</span>
+                                <span class="gist">A monorepo catalogue of Power Apps Component Framework controls.</span>
+                                <span class="repo print-only">github.com/N0g4D/pcf-mega-library</span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <p>947 controls scaffolded across 25 categories in a single npm-workspaces monorepo, with three built out as flagships: a slide-out panel, a multi-state action button and a sortable, filterable data matrix.</p>
+                                <p class="keys"><b>Built with</b> TypeScript, React 19, Fluent UI v9. MIT.</p>
+                                <p><a class="btn btn-small" href="https://github.com/N0g4D/pcf-mega-library" rel="noopener">PCF Mega Library on GitHub</a></p>
+                            </div>
+                        </details>
+
+                        <details class="entry entry-named project" id="crysm" data-areas="power-platform web3">
+                            <summary>
+                                <h3>Crysm</h3>
+                                <span class="area">Power Platform, Web3</span>
+                                <span class="gist">A strategy game built as a Canvas app, where each match's deck is minted as an NFT.</span>
+                                <span class="repo print-only">github.com/N0g4D/Crysm</span>
+                                <span class="marker" aria-hidden="true"></span>
+                            </summary>
+                            <div class="entry-body">
+                                <p>Winner of Cluster Reply's Make a Power Game contest. A perfect-information maths puzzle on RGB colour theory, with the scoring engine written in Power Fx. When a match starts, a Power Automate flow mints its twelve-colour deck as an ERC-721 token, so the match configuration is unique and immutable.</p>
+                                <p class="keys"><b>Built with</b> Power Apps (Canvas), Power Fx, Power Automate, ERC-721.</p>
+                                <p><a class="btn btn-small" href="https://github.com/N0g4D/Crysm" rel="noopener">Crysm on GitHub</a></p>
+                            </div>
+                        </details>
+                    </div>
+
+                    <p class="note">Also in research: security review tooling for confidential (FHE) smart contracts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CONTACT ─── -->
+        <section class="section" id="contact" aria-labelledby="contact-h">
+            <div class="wrap section-grid">
+                <header class="section-head">
+                    <h2 id="contact-h" data-anchor="contact">Contact</h2>
+                </header>
+
+                <div class="section-body prose">
+                    <p class="intro">Available for architecture and advisory contracts. Get in touch for an initial call: no commitment, and a reply within 24 hours.</p>
+
+                    <dl class="ledger block narrow">
+                        <div><dt>Email</dt><dd><a href="mailto:info@alessiomalerba.it">info@alessiomalerba.it</a></dd></div>
+                        <div><dt>GitHub</dt><dd><a href="https://github.com/N0g4D" rel="noopener me">github.com/N0g4D</a></dd></div>
+                        <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/alessio-malerba-969088204/" rel="noopener me">linkedin.com/in/alessio-malerba-969088204</a></dd></div>
+                        <div><dt>Based</dt><dd>Genoa, Italy, remote</dd></div>
+                    </dl>
+
+                    <div class="actions no-print">
+                        <a class="btn btn-solid" href="mailto:info@alessiomalerba.it">Send an email</a>
+                        <button type="button" class="btn" data-copy="info@alessiomalerba.it" data-js hidden>Copy address</button>
+                    </div>
+
+                    <div class="no-print" id="brief" data-js hidden>
+                        <h3 class="sub" id="brief-h" data-anchor="brief">Write a brief</h3>
+                        <p>A few choices and a few lines. It opens as a draft in your own mail app, addressed to me. This page sends nothing.</p>
+
+                        <form class="brief narrow" id="brief-form" aria-labelledby="brief-h">
+                            <fieldset class="field">
+                                <legend>What you need</legend>
+                                <div class="chips">
+                                    <label class="opt"><input class="vh" type="radio" name="kind" value="consulting"><span class="chip">Consulting</span></label>
+                                    <label class="opt"><input class="vh" type="radio" name="kind" value="project"><span class="chip">A project</span></label>
+                                    <label class="opt"><input class="vh" type="radio" name="kind" value="retainer"><span class="chip">A retainer</span></label>
+                                    <label class="opt"><input class="vh" type="radio" name="kind" value="unsure" checked><span class="chip">Not sure yet</span></label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="field">
+                                <legend>Area</legend>
+                                <div class="chips">
+                                    <label class="opt"><input class="vh" type="checkbox" name="area" value="legacy modernisation"><span class="chip">Legacy modernisation</span></label>
+                                    <label class="opt"><input class="vh" type="checkbox" name="area" value="architecture and portals"><span class="chip">Architecture and portals</span></label>
+                                    <label class="opt"><input class="vh" type="checkbox" name="area" value="pro-dev and ALM"><span class="chip">Pro-dev and ALM</span></label>
+                                    <label class="opt"><input class="vh" type="checkbox" name="area" value="security and governance"><span class="chip">Security and governance</span></label>
+                                    <label class="opt"><input class="vh" type="checkbox" name="area" value="AI agents and MCP"><span class="chip">AI agents and MCP</span></label>
+                                    <label class="opt"><input class="vh" type="checkbox" name="area" value="something else"><span class="chip">Something else</span></label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="field">
+                                <legend>Timing</legend>
+                                <div class="chips">
+                                    <label class="opt"><input class="vh" type="radio" name="timing" value="as soon as possible"><span class="chip">As soon as possible</span></label>
+                                    <label class="opt"><input class="vh" type="radio" name="timing" value="in one to three months"><span class="chip">In one to three months</span></label>
+                                    <label class="opt"><input class="vh" type="radio" name="timing" value="just exploring" checked><span class="chip">Just exploring</span></label>
+                                </div>
+                            </fieldset>
+
+                            <div class="field">
+                                <label for="brief-about">A few lines about it</label>
+                                <textarea id="brief-about" name="about" rows="4"></textarea>
+                            </div>
+
+                            <div class="field">
+                                <label for="brief-from">Your name and company</label>
+                                <input type="text" id="brief-from" name="from" autocomplete="name">
+                            </div>
+
+                            <div class="field">
+                                <p class="hint" id="brief-preview-label">This is the draft that will open:</p>
+                                <div class="brief-preview" id="brief-preview" role="group" aria-labelledby="brief-preview-label"></div>
+                            </div>
+
+                            <div class="inline">
+                                <a class="btn btn-solid" id="brief-open" href="mailto:info@alessiomalerba.it">Open the draft in my mail app</a>
+                                <button type="button" class="btn" id="brief-copy">Copy the draft</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- ─── FOOTER ─── -->
-    <footer class="border-t border-zinc-800 py-10">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-zinc-600">
-            <span>&copy; 2026 Alessio Malerba &middot; PL-600 &middot; Genoa, Italy</span>
-            <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-                <a href="#experience" class="hover:text-white transition-colors">experience</a>
-                <a href="#ancorhash" class="hover:text-white transition-colors">ancorhash</a>
-                <a href="https://github.com/N0g4D" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">github</a>
-                <a href="mailto:info@alessiomalerba.it" class="hover:text-white transition-colors">email</a>
-            </div>
+    <footer class="site-footer">
+        <div class="wrap">
+            <p>&copy; 2026 Alessio Malerba. PL-600. Genoa, Italy.</p>
+            <ul class="no-print">
+                <li><a href="https://github.com/N0g4D" rel="noopener me">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/alessio-malerba-969088204/" rel="noopener me">LinkedIn</a></li>
+                <li><a href="mailto:info@alessiomalerba.it">Email</a></li>
+                <li data-js hidden><button type="button" class="linklike" data-action="print">Print as a CV</button></li>
+                <li data-js hidden><button type="button" class="linklike" data-action="palette">Commands</button></li>
+            </ul>
+            <p class="claim no-print">No trackers, no cookies, nothing loaded from third parties. Don't take my word for it: open the network tab.</p>
         </div>
     </footer>
 
-    <!-- ─── SCRIPTS ─── -->
-    <script>
-        // Mobile menu
-        const toggle = document.getElementById('mobile-toggle');
-        const menu = document.getElementById('mobile-menu');
-        toggle.addEventListener('click', () => {
-            const open = menu.classList.toggle('hidden') === false;
-            toggle.setAttribute('aria-expanded', String(open));
-        });
-        menu.querySelectorAll('a').forEach(link =>
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-                toggle.setAttribute('aria-expanded', 'false');
-            })
-        );
+    <!-- ─── COMMAND PALETTE (filled by site.js) ─── -->
+    <dialog class="palette" id="palette" aria-label="Commands">
+        <label class="palette-field">
+            <span class="mono" aria-hidden="true">&gt;</span>
+            <span class="vh">Filter commands</span>
+            <input type="text" id="palette-input" role="combobox" aria-expanded="true" aria-controls="palette-list" aria-autocomplete="list" autocomplete="off" autocapitalize="off" spellcheck="false">
+        </label>
+        <div class="palette-list" id="palette-list" role="listbox" aria-label="Commands"></div>
+        <p class="palette-help" id="palette-help">Type to filter. Arrow keys to move, Enter to run, Esc to close.</p>
+    </dialog>
 
-        // AnchorJS — anchor hashes on every h2 and h3
-        anchors.options = {
-            placement: 'right',
-            visible: 'hover',
-            icon: '#',
-            ariaLabel: 'Direct link to this section'
-        };
-        anchors.add('h2, h3');
-    </script>
+    <div class="vh" id="live" role="status" aria-live="polite"></div>
 </body>
 </html>
