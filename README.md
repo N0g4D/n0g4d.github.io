@@ -23,6 +23,7 @@ interactions on top.
 | `assets/site.js` | All the interactions (see below). No dependencies |
 | `assets/fonts/` | Atkinson Hyperlegible Next and Mono (variable, Latin subset), with their OFL licences |
 | `assets/shots/` | Project screenshots, in WebP: the full image and a 960-px-wide thumbnail for each |
+| `alessio-malerba-cv.pdf` | The CV, Power Platform version, linked from Experience, Contact, the footer and the palette |
 | `n0g4d.png` | Favicon and touch icon |
 | `og.png` | 1200×630 preview image for links shared on LinkedIn, Slack, etc. |
 | `CNAME` | Binds the apex domain `alessiomalerba.it`. **Do not delete**: removing it unbinds the custom domain on the next build |
@@ -79,9 +80,10 @@ All of them run on the visitor's device; nothing is sent anywhere.
 - **Write a brief:** a few choices and a few lines turn into a draft in the
   visitor's own mail app (a `mailto:` link). The "Start a … brief" buttons
   preselect the kind of work.
-- **Print as a CV:** prints two A4 pages with name, contacts, summary, stack,
-  experience, education and one line per project. Services, rates, the brief and
-  the project write-ups stay on screen.
+- **Download CV (PDF):** `alessio-malerba-cv.pdf`. To update the CV, replace
+  the file and keep the name: links already sent around keep working. Printing
+  the page (Ctrl/⌘ P) still gives a clean two-page summary: name, contacts,
+  stack, experience, education and one line per project.
 - **Permalinks:** a `#` beside each section title. The target comes from the
   heading's `data-anchor` attribute, so rewording a title doesn't change its
   link.

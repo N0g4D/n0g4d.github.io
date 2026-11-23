@@ -9,6 +9,7 @@
   'use strict';
 
   const EMAIL = 'info@alessiomalerba.it';
+  const CV = 'alessio-malerba-cv.pdf';
   const MAX_FILE = 256 * 1024 * 1024;
 
   const root = document.documentElement;
@@ -515,7 +516,7 @@
   });
   viewer.addEventListener('close', () => viewerImg.removeAttribute('src'));
 
-  /* ── Print as a CV ────────────────────────────────────────────────────── */
+  /* ── Printing: every row open, every project shown ───────────────────── */
 
   let openedForPrint = [];
   let filterBeforePrint = 'all';
@@ -568,7 +569,14 @@
   command('Do', 'Write a brief', () => goTo('brief'), '', 'contact enquiry quote');
   command('Do', 'Hash a text or a file', () => goTo('hasher'), 'SHA-256', 'ancorhash digest verify checksum');
   command('Do', 'Invert colours', invert, '', 'theme dark light black white');
-  command('Do', 'Print as a CV', () => window.print(), '', 'pdf resume curriculum download');
+  command('Do', 'Download CV (PDF)', () => {
+    const link = document.createElement('a');
+    link.href = CV;
+    link.download = '';
+    document.body.append(link);
+    link.click();
+    link.remove();
+  }, '', 'curriculum resume print');
 
   command('Elsewhere', 'GitHub', () => { location.href = 'https://github.com/N0g4D'; }, 'github.com/N0g4D');
   command('Elsewhere', 'LinkedIn', () => { location.href = 'https://www.linkedin.com/in/alessiomalerba-tech/'; }, 'linkedin.com');
@@ -703,7 +711,6 @@
   document.addEventListener('click', (event) => {
     const button = event.target.closest('[data-action]');
     if (!button) return;
-    if (button.dataset.action === 'print') window.print();
     if (button.dataset.action === 'palette') openPalette();
   });
 })();
